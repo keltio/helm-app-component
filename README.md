@@ -1,13 +1,8 @@
 # app-component
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
+![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
 
 A Helm chart for Kubernetes
-
-## Install
-```
-helm repo add keltio https://keltio.github.io/helm-app-component
-```
 
 ## Requirements
 
@@ -27,7 +22,7 @@ helm repo add keltio https://keltio.github.io/helm-app-component
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
 | command | list | `[]` |  |
 | cronjobs | list | `[]` |  |
-| env | object | `{}` |  |
+| env | list | `[]` |  |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"nginx"` |  |

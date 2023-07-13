@@ -4,6 +4,11 @@
 
 A Helm chart for Kubernetes
 
+## Install
+```
+helm repo add keltio https://keltio.github.io/helm-app-component
+```
+
 ## Requirements
 
 | Repository | Name | Version |

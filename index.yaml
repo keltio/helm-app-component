@@ -2,8 +2,27 @@ apiVersion: v1
 entries:
   app-component:
   - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2023-07-13T16:43:59.149033105+02:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.1.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.3.11
+    description: A Helm chart for Kubernetes
+    digest: 7c382a3b10d6d2034799dc776bb24dad5456565770aca683fd26059b06c6e229
+    name: app-component
+    type: application
+    urls:
+    - app-component-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     appVersion: 1.0.0
-    created: "2023-07-13T15:36:19.269380621+02:00"
+    created: "2023-07-13T16:43:59.139317963+02:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -25,7 +44,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 15.1.0
-    created: "2023-07-13T15:36:19.277491671+02:00"
+    created: "2023-07-13T16:43:59.153279066+02:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -60,7 +79,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 7.0.5
-    created: "2023-07-13T15:36:19.286759215+02:00"
+    created: "2023-07-13T16:43:59.157265145+02:00"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -86,4 +105,4 @@ entries:
     urls:
     - charts/redis-17.3.11.tgz
     version: 17.3.11
-generated: "2023-07-13T15:36:19.254035109+02:00"
+generated: "2023-07-13T16:43:59.130372933+02:00"

@@ -1,0 +1,34 @@
+{{- $self := . -}}
+
+{{- range $index, $cronjob := .Values.cronjobs }}
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ $cronjob.name }}
+  labels:
+    {{- include "app-component.labels" $ | nindent 4 }}
+spec:
+  schedule: "{{ $cronjob.schedule }}"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: "{{ $cronjob.name }}"
+            image: "{{ $self.Values.image.repository }}:{{ $self.Values.image.tag | default $self.Chart.AppVersion }}"
+            imagePullPolicy: IfNotPresent
+            command:
+            {{- range $cmdIndex, $cmd := $cronjob.command }}
+            - {{ $cmd }}
+            {{- end }}
+            env:
+              {{- toYaml $self.Values.env | nindent 12 }}
+            {{- if $cronjob.args }}
+            args:
+            {{- range $argIndex, $arg := $cronjob.args }}
+            - {{ $arg }}
+            {{- end }}
+            {{- end }}
+          restartPolicy: OnFailure
+---
+{{- end }}

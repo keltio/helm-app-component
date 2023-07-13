@@ -1,0 +1,89 @@
+apiVersion: v1
+entries:
+  app-component:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-07-13T15:36:19.269380621+02:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.1.2
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.3.11
+    description: A Helm chart for Kubernetes
+    digest: de274090c0f90f3015f9e98e57a7e918532812b2899f1b6feeee2ae40b571594
+    name: app-component
+    type: application
+    urls:
+    - app-component-1.0.0.tgz
+    version: 1.0.0
+  postgresql:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 15.1.0
+    created: "2023-07-13T15:36:19.277491671+02:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: PostgreSQL (Postgres) is an open source object-relational database
+      known for reliability and data integrity. ACID-compliant, it supports foreign
+      keys, joins, views, triggers and stored procedures.
+    digest: 6706df44c06603a6e43d8ff250e5587e2d9223518259825d73ba4f98b1ef0ea7
+    home: https://github.com/bitnami/charts/tree/main/bitnami/postgresql
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: postgresql
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/postgresql
+    - https://www.postgresql.org/
+    urls:
+    - charts/postgresql-12.1.2.tgz
+    version: 12.1.2
+  redis:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 7.0.5
+    created: "2023-07-13T15:36:19.286759215+02:00"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Redis(R) is an open source, advanced key-value store. It is often
+      referred to as a data structure server since keys can contain strings, hashes,
+      lists, sets and sorted sets.
+    digest: ceeaecfb2219b385a957ed32fc4e91adfb0c748a5b930086146784a5b4b482dd
+    home: https://github.com/bitnami/charts/tree/main/bitnami/redis
+    icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: redis
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/redis
+    urls:
+    - charts/redis-17.3.11.tgz
+    version: 17.3.11
+generated: "2023-07-13T15:36:19.254035109+02:00"
